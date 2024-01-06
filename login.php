@@ -1,9 +1,9 @@
 <?php
 
-// Set session timeout to 30 minutes
-ini_set('session.gc_maxlifetime', 30 * 60);
-
-session_start();
+// 15 minute session cookies
+session_start([
+    'cookie_lifetime' => 900
+]);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = "admin"; // Replace with your username
